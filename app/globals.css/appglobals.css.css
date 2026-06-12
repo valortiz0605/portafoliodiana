@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 45, 45, 45;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #E9DDF4;
+  overflow-x: hidden;
+}
+
+/* Selección de texto personalizada con tu color de acento */
+::selection {
+  background-color: #FFCF3F;
+  color: #3A225F;
+}
+
+/* Suavizado de scroll para navegación interna */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Utilidad para degradados sutiles tipo HubSpot */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-20;
+  }
+}
