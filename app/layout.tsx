@@ -5,13 +5,12 @@ import "./globals.css";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
-  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
   title: "Diana Valentina Ortiz Ossa | Marketing & Diseño",
   description:
-    "Portafolio profesional de marketing, diseño gráfico y comunicación estratégica",
+    "Portafolio profesional en marketing digital, diseño y comunicación estratégica",
 };
 
 export default function RootLayout({
@@ -21,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={`${poppins.variable} font-sans bg-white text-gray-900`}>
+      <body className={`${poppins.className} bg-[#0B0F19] text-white`}>
         {children}
       </body>
     </html>
