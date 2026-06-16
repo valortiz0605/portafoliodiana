@@ -8,7 +8,13 @@ import {
 } from 'lucide-react';
 
 // Componentes Reutilizables
-const SectionTitle = ({ children, subtitle }) => (
+const SectionTitle = ({
+  children,
+  subtitle,
+}: {
+  children: React.ReactNode;
+  subtitle?: string;
+}) => (
   <div className="mb-12 text-center">
     <h2 className="font-display text-3xl md:text-4xl font-bold text-brand-primary mb-4">{children}</h2>
     {subtitle && <p className="text-brand-muted max-w-2xl mx-auto">{subtitle}</p>}
