@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Diana Valentina Ortiz Ossa | Estratega de Marketing & Diseño',
+  description:
+    'Portafolio profesional de marketing, diseño y comunicación estratégica',
+};
 import type { Metadata } from "next";
 import { Poppins, Lato } from "next/font/google";
 import "./globals.css";
