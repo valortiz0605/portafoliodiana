@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Lato } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
+  variable: "--font-poppins",
+});
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  variable: "--font-lato",
 });
 
 export const metadata: Metadata = {
-  title: "Diana Valentina Ortiz Ossa | Marketing & Diseño",
-  description:
-    "Portafolio profesional en marketing digital, diseño y comunicación estratégica",
+  title: "Diana Valentina Ortiz Ossa | Portafolio",
+  description: "Portafolio profesional de marketing y diseño",
 };
 
 export default function RootLayout({
@@ -20,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={`${poppins.className} bg-[#0B0F19] text-white`}>
+      <body className={`${poppins.variable} ${lato.variable}`}>
         {children}
       </body>
     </html>
