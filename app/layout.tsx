@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Lato } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -8,22 +8,10 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-const lato = Lato({
-  subsets: ["latin"],
-  weight: ["300", "400", "700"],
-  variable: "--font-lato",
-});
-
 export const metadata: Metadata = {
-  title: "Diana Valentina Ortiz Ossa | Estrategia de Marketing & Diseño",
+  title: "Diana Valentina Ortiz Ossa | Marketing & Diseño",
   description:
-    "Estratega de marketing, comunicación y diseño gráfico. Especialista en transformar objetivos comerciales en estrategias accionables.",
-  keywords: [
-    "Marketing Digital",
-    "Comunicación Estratégica",
-    "Diseño Gráfico",
-    "Coordinación de Mercadeo",
-  ],
+    "Portafolio profesional de marketing, diseño gráfico y comunicación estratégica",
 };
 
 export default function RootLayout({
@@ -32,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className="scroll-smooth">
-      <body className={`${poppins.variable} ${lato.variable} font-sans antialiased`}>
+    <html lang="es">
+      <body className={`${poppins.variable} font-sans bg-white text-gray-900`}>
         {children}
       </body>
     </html>
