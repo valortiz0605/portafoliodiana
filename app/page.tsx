@@ -1,112 +1,130 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { 
-  Download, Linkedin, MessageCircle, Mail,
-  CheckCircle2, Rocket, Users, Target
-} from 'lucide-react';
-
-const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-};
+import Image from "next/image";
+import { Download, Linkedin, MessageCircle } from "lucide-react";
 
 export default function Page() {
   return (
-    <main className="bg-[#0B0F19] text-white min-h-screen">
+    <main className="bg-[var(--bg)] text-[var(--text)]">
+
+      {/* NAV */}
+      <nav className="max-w-6xl mx-auto flex justify-between items-center px-6 py-6">
+        <h1 className="font-[Poppins] font-bold text-[var(--primary)]">
+          Diana Valentina
+        </h1>
+
+        <div className="hidden md:flex gap-8 text-sm text-[var(--muted)]">
+          <a href="#about">Sobre mí</a>
+          <a href="#experience">Experiencia</a>
+          <a href="#contact">Contacto</a>
+        </div>
+      </nav>
 
       {/* HERO */}
-      <section className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 items-center">
+      <section className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 px-6 py-24 items-center">
 
-        <motion.div {...fadeIn}>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Estratega de marketing & diseño
-          </h1>
-
-          <p className="mt-6 text-gray-300">
-            Transformo ideas en estrategias digitales con enfoque en crecimiento y branding.
+        {/* TEXTO */}
+        <div>
+          <p className="text-[var(--accent)] uppercase tracking-widest text-sm font-semibold">
+            Marketing & Estrategia
           </p>
 
-          <div className="flex gap-3 mt-8 flex-wrap">
-            
+          <h2 className="font-[Poppins] text-4xl md:text-5xl font-bold leading-tight mt-4">
+            Transformo ideas en estrategias que construyen marcas.
+          </h2>
+
+          <p className="mt-5 text-[var(--muted)] leading-relaxed">
+            Estrategia, diseño y comunicación enfocada en crecimiento y resultados reales.
+          </p>
+
+          {/* BOTONES */}
+          <div className="flex flex-wrap gap-3 mt-8">
+
             <a
               href="/cv-diana-ortiz.pdf"
-              className="bg-purple-500 px-5 py-3 rounded-lg flex items-center gap-2"
+              className="bg-[var(--primary)] text-white px-6 py-3 rounded-xl text-sm flex items-center gap-2"
             >
-              <Download size={18}/> CV
+              <Download size={18} /> Descargar CV
             </a>
 
             <a
               href="https://wa.me/573000000000"
-              className="border px-5 py-3 rounded-lg flex items-center gap-2"
+              className="bg-[var(--accent)] text-[var(--primary)] px-6 py-3 rounded-xl text-sm font-semibold flex items-center gap-2"
             >
-              <MessageCircle size={18}/> WhatsApp
+              <MessageCircle size={18} /> WhatsApp
             </a>
 
             <a
               href="https://linkedin.com"
-              target="_blank"
-              className="border px-5 py-3 rounded-lg flex items-center gap-2"
+              className="border border-[var(--border)] px-6 py-3 rounded-xl text-sm flex items-center gap-2"
             >
-              <Linkedin size={18}/> LinkedIn
+              <Linkedin size={18} /> LinkedIn
             </a>
-          </div>
-        </motion.div>
 
-        {/* FOTO */}
-        <motion.div {...fadeIn} className="flex justify-center">
-          <Image
-            src="/foto-perfil.jpg"
-            alt="Perfil"
-            width={400}
-            height={400}
-            className="rounded-2xl object-cover"
-          />
-        </motion.div>
+          </div>
+        </div>
+
+        {/* FOTO PERFECTA (NO ESTIRADA) */}
+        <div className="flex justify-center">
+          <div className="w-[340px] h-[420px] rounded-2xl overflow-hidden border border-[var(--border)] shadow-md bg-white">
+            <Image
+              src="/foto-perfil.jpg"
+              alt="Diana Valentina"
+              width={600}
+              height={800}
+              className="w-full h-full object-cover object-center"
+              priority
+            />
+          </div>
+        </div>
 
       </section>
 
       {/* ABOUT */}
-      <section className="max-w-5xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold mb-6">Sobre mí</h2>
+      <section id="about" className="max-w-5xl mx-auto px-6 py-20">
+        <h3 className="font-[Poppins] text-2xl font-bold text-[var(--primary)] mb-6">
+          Sobre mí
+        </h3>
 
-        <p className="text-gray-300">
-          Diseñadora gráfica con maestría y experiencia en marketing digital, branding y estrategia.
+        <p className="text-[var(--muted)] leading-relaxed text-lg">
+          Profesional en marketing digital y diseño gráfico con enfoque estratégico,
+          comunicación y dirección creativa.
         </p>
+      </section>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-10">
+      {/* EXPERIENCE */}
+      <section id="experience" className="max-w-5xl mx-auto px-6 py-10">
+        <h3 className="font-[Poppins] text-2xl font-bold text-[var(--primary)] mb-6">
+          Experiencia
+        </h3>
 
-          <div className="bg-white/5 p-6 rounded-xl">
-            <Target className="mb-3"/>
-            Estrategia
+        <div className="grid gap-3 text-[var(--muted)]">
+          <div className="p-4 bg-white border border-[var(--border)] rounded-xl">
+            Coordinación de marketing digital
           </div>
-
-          <div className="bg-white/5 p-6 rounded-xl">
-            <Users className="mb-3"/>
-            Gestión de equipos
+          <div className="p-4 bg-white border border-[var(--border)] rounded-xl">
+            Gestión de redes sociales
           </div>
-
-          <div className="bg-white/5 p-6 rounded-xl">
-            <Rocket className="mb-3"/>
-            Crecimiento
+          <div className="p-4 bg-white border border-[var(--border)] rounded-xl">
+            Branding y diseño gráfico
           </div>
-
         </div>
       </section>
 
-      {/* CONTACTO */}
+      {/* CONTACT */}
       <section className="text-center py-20">
-        <h2 className="text-3xl font-bold">Hablemos</h2>
-
-        <a
-          href="mailto:tu-correo@correo.com"
-          className="mt-6 inline-flex items-center gap-2 text-purple-400"
-        >
-          <Mail /> Enviar correo
-        </a>
+        <h3 className="font-[Poppins] text-2xl font-bold text-[var(--primary)]">
+          Contacto
+        </h3>
+        <p className="text-[var(--muted)] mt-2">
+          Disponible para nuevas oportunidades
+        </p>
       </section>
+
+      {/* FOOTER */}
+      <footer className="text-center py-10 text-sm text-[var(--muted)]">
+        © {new Date().getFullYear()} Diana Valentina Ortiz Ossa
+      </footer>
 
     </main>
   );
