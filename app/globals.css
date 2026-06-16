@@ -3,37 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
+  --primary: #3A225F;
+  --accent: #FFCF3F;
+
+  --bg: #F6F2FA;
+  --surface: #ffffff;
+
+  --text: #1C1C22;
+  --muted: #6B6B76;
+
+  --border: #E7E2EF;
 }
 
-/* BASE PREMIUM DARK */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: #0B0F19;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-lato);
   overflow-x: hidden;
-  font-family: system-ui, sans-serif;
-}
-
-/* selección elegante */
-::selection {
-  background-color: #A855F7;
-  color: white;
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-/* glass effect premium */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* container util */
-@layer components {
-  .section-container {
-    @apply max-w-7xl mx-auto px-6 py-20;
-  }
 }
