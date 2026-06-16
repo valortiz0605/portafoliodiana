@@ -21,7 +21,16 @@ const SectionTitle = ({
   </div>
 );
 
-const Button = ({ children, variant = 'primary', className = '', ...props }) => {
+const Button = ({
+  children,
+  variant = 'primary',
+  className = '',
+  ...props
+}: {
+  children: React.ReactNode;
+  variant?: 'primary' | 'accent' | 'outline';
+  className?: string;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>) => {
   const styles = {
     primary: "bg-brand-primary text-white hover:bg-brand-secondary transition-all",
     accent: "bg-brand-accent text-brand-primary font-bold hover:shadow-lg transition-all",
