@@ -1,126 +1,106 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import {
-  Download, Linkedin, MessageCircle,
-  CheckCircle2, Rocket, Users, Target, Mail
-} from 'lucide-react';
+  Download,
+  Linkedin,
+  MessageCircle,
+  Mail,
+} from "lucide-react";
 
-// Componentes reutilizables
-const SectionTitle = ({
-  children,
-  subtitle,
-}: {
-  children: React.ReactNode;
-  subtitle?: string;
-}) => (
-  <div className="mb-12 text-center">
-    <h2 className="font-display text-3xl md:text-4xl font-bold text-brand-primary mb-4">
-      {children}
-    </h2>
-    {subtitle && (
-      <p className="text-brand-muted max-w-2xl mx-auto">{subtitle}</p>
-    )}
-  </div>
-);
-
-const Button = ({
-  children,
-  variant = 'primary',
-  className = '',
-  ...props
-}: {
-  children: React.ReactNode;
-  variant?: 'primary' | 'accent' | 'outline';
-  className?: string;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>) => {
-  const styles = {
-    primary: "bg-brand-primary text-white hover:bg-brand-secondary transition-all",
-    accent: "bg-brand-accent text-brand-primary font-bold hover:shadow-lg transition-all",
-    outline: "border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white transition-all"
-  };
-
+export default function Page() {
   return (
-    <button
-      className={`px-6 py-3 rounded-lg flex items-center justify-center gap-2 font-medium ${styles[variant]} ${className}`}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-};
-
-export default function Portfolio() {
-
-  return (
-    <div className="bg-brand-base min-h-screen text-brand-dark font-sans">
-
-      {/* NAV */}
-      <nav className="fixed w-full z-50 bg-brand-base/80 backdrop-blur-md border-b border-brand-primary/10">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <span className="font-display font-bold text-brand-primary text-xl">
-            DIANA VALENTINA
-          </span>
-        </div>
-      </nav>
+    <main className="min-h-screen">
 
       {/* HERO */}
-      <section className="pt-32 pb-20 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <section className="px-6 py-24 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="font-display text-4xl md:text-6xl font-bold text-brand-primary leading-tight mb-6">
-              Estrategia de marketing con enfoque creativo
-            </h1>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+            Diana Valentina Ortiz Ossa
+          </h1>
 
-            <p className="text-lg text-brand-muted mb-8">
-              Portafolio profesional de marketing, comunicación y diseño.
-            </p>
+          <p className="mt-4 text-gray-600 text-lg">
+            Estratega de marketing, diseño gráfico y comunicación digital.
+          </p>
 
-            <div className="flex flex-wrap gap-4">
-              <Button variant="primary">
-                <Download size={18} /> CV
-              </Button>
+          {/* BOTONES */}
+          <div className="flex flex-wrap gap-3 mt-6">
 
-              <Button variant="accent">
-                <MessageCircle size={18} /> WhatsApp
-              </Button>
+            <a
+              href="/cv.pdf"
+              className="px-5 py-3 bg-black text-white rounded-lg flex items-center gap-2"
+            >
+              <Download size={18} /> Descargar CV
+            </a>
 
-              <Button variant="outline">
-                <Linkedin size={18} /> LinkedIn
-              </Button>
-            </div>
-          </motion.div>
+            <a
+              href="https://wa.me/000000000"
+              className="px-5 py-3 bg-green-500 text-white rounded-lg flex items-center gap-2"
+            >
+              <MessageCircle size={18} /> WhatsApp
+            </a>
 
-          {/* imagen placeholder seguro */}
-          <div className="w-full aspect-square bg-white rounded-2xl shadow-xl" />
-        </div>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              className="px-5 py-3 border rounded-lg flex items-center gap-2"
+            >
+              <Linkedin size={18} /> LinkedIn
+            </a>
+
+          </div>
+        </motion.div>
+
+        {/* FOTO */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="flex justify-center"
+        >
+          <div className="w-80 h-80 bg-gray-200 rounded-2xl overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
+              className="w-full h-full object-cover"
+              alt="perfil"
+            />
+          </div>
+        </motion.div>
+
       </section>
 
       {/* ABOUT */}
-      <section className="py-20 bg-white px-6">
-        <div className="max-w-5xl mx-auto">
-          <SectionTitle>Sobre mí</SectionTitle>
-
-          <p className="text-brand-muted">
-            Estratega de marketing con experiencia en comunicación visual,
-            gestión de redes y campañas digitales.
+      <section className="px-6 py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Sobre mí</h2>
+          <p className="text-gray-600 leading-relaxed">
+            Profesional en marketing y diseño con experiencia en estrategia digital,
+            gestión de redes sociales, branding y comunicación corporativa.
           </p>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-2 gap-4 mt-8">
+      {/* SKILLS */}
+      <section className="px-6 py-20">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6">Habilidades</h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {[
-              "Estrategia Digital",
-              "Marketing",
-              "Diseño",
-              "Comunicación"
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2 text-sm">
-                <CheckCircle2 size={16} />
+              "Marketing Digital",
+              "Diseño Gráfico",
+              "Redes Sociales",
+              "Branding",
+              "Estrategia",
+              "Comunicación",
+            ].map((item) => (
+              <div
+                key={item}
+                className="p-3 border rounded-lg text-center"
+              >
                 {item}
               </div>
             ))}
@@ -128,11 +108,23 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* CONTACT */}
+      <section className="px-6 py-20 bg-black text-white text-center">
+        <h2 className="text-3xl font-bold mb-4">Contacto</h2>
+
+        <a
+          href="mailto:correo@ejemplo.com"
+          className="inline-flex items-center gap-2 text-lg"
+        >
+          <Mail /> correo@ejemplo.com
+        </a>
+      </section>
+
       {/* FOOTER */}
-      <footer className="py-10 text-center text-sm text-brand-muted">
+      <footer className="py-10 text-center text-sm text-gray-500">
         © {new Date().getFullYear()} Diana Valentina Ortiz Ossa
       </footer>
 
-    </div>
+    </main>
   );
 }
