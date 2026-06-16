@@ -1,127 +1,132 @@
 'use client';
 
-import { motion } from "framer-motion";
-import {
-  Download,
-  Linkedin,
-  MessageCircle,
-  Mail,
-} from "lucide-react";
+import Image from "next/image";
 
 export default function Page() {
   return (
     <main className="min-h-screen">
 
+      {/* NAV */}
+      <nav className="flex justify-between items-center px-10 py-6 border-b border-white/10">
+        <h1 className="font-bold tracking-widest">DIANA VALENTINA</h1>
+
+        <div className="flex gap-6 text-sm text-white/70">
+          <a href="#about">Sobre mí</a>
+          <a href="#experience">Experiencia</a>
+          <a href="#contact">Contacto</a>
+        </div>
+      </nav>
+
       {/* HERO */}
-      <section className="px-6 py-24 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <section className="grid md:grid-cols-2 gap-10 px-10 py-20 items-center">
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Diana Valentina Ortiz Ossa
-          </h1>
+        <div>
+          <h2 className="text-5xl font-bold leading-tight">
+            Estratega de <span className="text-purple-400">Marketing</span> & Diseño
+          </h2>
 
-          <p className="mt-4 text-gray-600 text-lg">
-            Estratega de marketing, diseño gráfico y comunicación digital.
+          <p className="mt-6 text-white/70 text-lg">
+            Transformo ideas en estrategias de comunicación y crecimiento digital.
           </p>
 
           {/* BOTONES */}
-          <div className="flex flex-wrap gap-3 mt-6">
+          <div className="flex flex-wrap gap-3 mt-8">
 
             <a
-              href="/cv.pdf"
-              className="px-5 py-3 bg-black text-white rounded-lg flex items-center gap-2"
+              href="/cv-diana-ortiz.pdf"
+              className="px-5 py-3 bg-purple-500 rounded-xl font-medium"
             >
-              <Download size={18} /> Descargar CV
+              Descargar CV
             </a>
 
             <a
               href="https://wa.me/000000000"
-              className="px-5 py-3 bg-green-500 text-white rounded-lg flex items-center gap-2"
+              className="px-5 py-3 bg-green-500 rounded-xl font-medium"
             >
-              <MessageCircle size={18} /> WhatsApp
+              WhatsApp
             </a>
 
             <a
               href="https://linkedin.com"
-              target="_blank"
-              className="px-5 py-3 border rounded-lg flex items-center gap-2"
+              className="px-5 py-3 border border-white/20 rounded-xl"
             >
-              <Linkedin size={18} /> LinkedIn
+              LinkedIn
             </a>
 
           </div>
-        </motion.div>
+        </div>
 
         {/* FOTO */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="flex justify-center"
-        >
-          <div className="w-80 h-80 bg-gray-200 rounded-2xl overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
-              className="w-full h-full object-cover"
-              alt="perfil"
-            />
-          </div>
-        </motion.div>
+        <div className="flex justify-center">
+          <Image
+            src="/foto-perfil.jpg"
+            alt="Foto perfil"
+            width={350}
+            height={350}
+            className="rounded-2xl object-cover"
+          />
+        </div>
 
       </section>
 
       {/* ABOUT */}
-      <section className="px-6 py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Sobre mí</h2>
-          <p className="text-gray-600 leading-relaxed">
-            Profesional en marketing y diseño con experiencia en estrategia digital,
-            gestión de redes sociales, branding y comunicación corporativa.
-          </p>
-        </div>
+      <section id="about" className="px-10 py-20 bg-white text-black">
+        <h3 className="text-3xl font-bold">Sobre mí</h3>
+
+        <p className="mt-4 max-w-3xl text-gray-700">
+          Profesional en marketing digital, diseño gráfico y comunicación estratégica,
+          con experiencia en branding, campañas digitales y coordinación de equipos.
+        </p>
       </section>
 
-      {/* SKILLS */}
-      <section className="px-6 py-20">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6">Habilidades</h2>
+      {/* EXPERIENCE */}
+      <section id="experience" className="px-10 py-20">
+        <h3 className="text-3xl font-bold mb-10">Experiencia</h3>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {[
-              "Marketing Digital",
-              "Diseño Gráfico",
-              "Redes Sociales",
-              "Branding",
-              "Estrategia",
-              "Comunicación",
-            ].map((item) => (
-              <div
-                key={item}
-                className="p-3 border rounded-lg text-center"
-              >
-                {item}
-              </div>
-            ))}
+        <div className="grid md:grid-cols-2 gap-6">
+
+          <div className="p-6 border border-white/10 rounded-2xl">
+            <h4 className="font-bold">Marketing Digital</h4>
+            <p className="text-white/60 mt-2">
+              Estrategias de crecimiento, contenido y campañas.
+            </p>
           </div>
+
+          <div className="p-6 border border-white/10 rounded-2xl">
+            <h4 className="font-bold">Diseño Gráfico</h4>
+            <p className="text-white/60 mt-2">
+              Branding, piezas digitales y comunicación visual.
+            </p>
+          </div>
+
+          <div className="p-6 border border-white/10 rounded-2xl">
+            <h4 className="font-bold">Estrategia</h4>
+            <p className="text-white/60 mt-2">
+              Planeación y dirección de comunicación de marca.
+            </p>
+          </div>
+
+          <div className="p-6 border border-white/10 rounded-2xl">
+            <h4 className="font-bold">Gestión de Redes</h4>
+            <p className="text-white/60 mt-2">
+              Manejo de contenido y posicionamiento digital.
+            </p>
+          </div>
+
         </div>
       </section>
 
       {/* CONTACT */}
-      <section className="px-6 py-20 bg-black text-white text-center">
-        <h2 className="text-3xl font-bold mb-4">Contacto</h2>
+      <section id="contact" className="px-10 py-20 bg-purple-500 text-white text-center">
+        <h3 className="text-3xl font-bold">Hablemos</h3>
 
-        <a
-          href="mailto:correo@ejemplo.com"
-          className="inline-flex items-center gap-2 text-lg"
-        >
-          <Mail /> correo@ejemplo.com
-        </a>
+        <p className="mt-4">
+          correo@ejemplo.com
+        </p>
       </section>
 
       {/* FOOTER */}
-      <footer className="py-10 text-center text-sm text-gray-500">
+      <footer className="py-10 text-center text-white/50 text-sm">
         © {new Date().getFullYear()} Diana Valentina Ortiz Ossa
       </footer>
 
