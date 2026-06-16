@@ -1,7 +1,11 @@
 'use client';
 
 import React from 'react';
-import Head from 'next/head';
+export const metadata = {
+  title: 'Diana Valentina Ortiz Ossa | Estratega de Marketing & Diseño',
+  description:
+    'Portafolio profesional de Diana Valentina Ortiz Ossa - Coordinación de Marketing y Comunicación Estratégica',
+};
 import { motion } from 'framer-motion';
 import { 
   Download, Linkedin, MessageCircle, ArrowRight, 
